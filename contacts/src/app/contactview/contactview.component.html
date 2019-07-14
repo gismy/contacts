@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="header">
+                  <div class="row">
+                      <div class="col-sm-6" *ngFor="let c of contact ">
+                              <h4 class="title text-left">{{c.c_name}}</h4>
+                      </div>
+                      
+                  </div>
+              </div>
+              <div class="content table-responsive table-full-width">
+                  <table>
+                    <thead>
+                      <tr *ngFor="let c of contact ">
+                              <th><a  class="title text-center">{{c.c_number}}</a></th> 
+                              <th><button class="btn btn-warning btn-sm"  [routerLink]="['contactedit']" [queryParams]='{cId:c.id,cName:c.c_name,cNum:c.c_number}'> Edit </button></th>
+                              <th><button class="btn btn-warning btn-sm" on-click="deleteContact()"> Delete </button></th>    
+                      </tr>
+                    </thead>
+                  </table>
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

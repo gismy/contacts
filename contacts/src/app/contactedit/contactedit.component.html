@@ -1,0 +1,31 @@
+<div class="container-fluid" >
+    <div class="row">
+        <div class="col-lg-8 col-md-7">
+            <div class="card card-user">   
+      <div class="header">
+        <h4 class="title">Edit Contact</h4>
+      </div>
+     <BR>
+      <Br>
+     <form [formGroup]="myForm" (submit)="submitMyForm(myForm.value)" >
+     Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input id="c_name" formControlName="c_name" required>
+    <span *ngIf="c_name.hasError('required') && c_name.dirty"> Name Required </span>
+    <span *ngIf="c_name.hasError('pattern') && c_name.dirty"> Wrong Pattern </span>
+    <br>
+    <br>
+     Contact Number:&nbsp;
+  <input type="text" id="c_number" formControlName="c_number" required>
+  <span *ngIf="c_number.hasError('required') && c_number.dirty"> Number Required </span>
+  <span *ngIf="c_number.hasError('pattern') && c_number.dirty">  Wrong Pattern  </span>
+  <br>  <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp; <button type="submit" [disabled]='!myForm.valid' >Submit</button>
+  
+      </form>
+      </div>
+  </div>
+    </div>
+  </div>
+  

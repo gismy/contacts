@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="row">
+     
+      <div class="col-md-12">
+          <div class="card">
+              <div class="header">
+                  <div class="row">
+                      
+                            
+                      
+                      <div class="col-sm-6">
+                              
+                              
+                                  <a>
+                                      Search contact&nbsp;<input type="text" [(ngModel)]='searchterm'>    
+                                  </a> 
+                              
+                      </div>
+                      
+                  </div>
+              </div>
+              <div class="content table-responsive table-full-width">
+                  
+                  <table>
+                    <thead>
+                      <tr *ngFor="let contact of (contactList |search:searchterm | sort)">
+                              <th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a  class="title text-center" [routerLink]="['contactview']" [queryParams]='{cId:contact.id}'>{{contact.c_name}}</a></th>     
+                      </tr>
+                    </thead>
+                  </table>
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
